@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Los Halógenos (Grupo 17) — Tabla Periódica Interactiva por Esquinas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Fondo ambiental reactivo al elemento seleccionado -->
+  <div id="ambient-glow" class="ambient-glow"></div>
+
+  <!-- Barra de navegación superior -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <div class="brand-badge">VIIA</div>
+        <div>
+          <span class="brand-kicker">TRABAJO ESPECIAL • QUÍMICA CON IA</span>
+          <h1 class="brand-title">Familia de los Halógenos <span>(Grupo 17)</span></h1>
+        </div>
+      </div>
+
+      <nav class="nav-links" aria-label="Secciones del sitio">
+        <a href="#explorador-esquinas" class="nav-link active">Explorador 4 Esquinas</a>
+        <a href="#compuestos-quimicos" class="nav-link">Óxidos y Ácidos</a>
+        <a href="#alimentos-materiales" class="nav-link">Alimentos y Materiales</a>
+        <a href="#evidencia-ia" class="nav-link">Evidencia de Comandos IA</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Banner de instrucciones rápidas -->
+    <section class="intro-banner">
+      <div class="intro-text">
+        <span class="pill-tag">Interacción por Cuadrantes</span>
+        <h2>Explora cada Halógeno pasando el cursor por sus <span class="gradient-text">4 Esquinas</span></h2>
+        <p>
+          Selecciona cualquiera de los <strong>6 elementos del Grupo 17</strong> en la columna periódica y coloca el puntero sobre cada una de las <strong>4 esquinas del laboratorio interactivo</strong> para descubrir dónde lo encontramos, sus características químicas, dónde lo utilizamos y cómo se ve en la realidad con imágenes e ilustraciones científicas.
+        </p>
+        <div class="corner-legend-grid">
+          <div class="legend-chip" data-corner-btn="topLeft">
+            <span class="chip-pos">↖ Esquina Superior Izquierda</span>
+            <strong>Dónde los encontramos</strong>
+            <small>Minerales, alimentos y naturaleza</small>
+          </div>
+          <div class="legend-chip" data-corner-btn="topRight">
+            <span class="chip-pos">↗ Esquina Superior Derecha</span>
+            <strong>Características del elemento</strong>
+            <small>Propiedades, óxidos y ácidos</small>
+          </div>
+          <div class="legend-chip" data-corner-btn="bottomLeft">
+            <span class="chip-pos">↙ Esquina Inferior Izquierda</span>
+            <strong>Dónde los utilizamos</strong>
+            <small>Industria, medicina y materiales</small>
+          </div>
+          <div class="legend-chip" data-corner-btn="bottomRight">
+            <span class="chip-pos">↘ Esquina Inferior Derecha</span>
+            <strong>Cómo se ve</strong>
+            <small>Estado físico real e imágenes</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="intro-showcase-card">
+        <img src="assets/img/halogens_showcase.jpg" alt="Fotografía de laboratorio de los 6 elementos halógenos: Flúor, Cloro, Bromo, Yodo, Astato y Teneso" class="showcase-img" />
+        <div class="showcase-caption">
+          <span>Vista Comparativa del Grupo 17 (F, Cl, Br, I, At, Ts)</span>
+          <small>De gases reactivos (F₂, Cl₂) al único no metal líquido (Br₂) y sólidos cristalinos/radiactivos (I₂, At, Ts).</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN PRINCIPAL: COLUMNA PERIÓDICA + LABORATORIO DE 4 ESQUINAS -->
+    <section id="explorador-esquinas" class="explorer-section">
+      <!-- Selector vertical de la columna Grupo 17 -->
+      <aside class="periodic-column-panel" aria-label="Columna Grupo 17 de la Tabla Periódica">
+        <div class="column-header">
+          <span class="group-num">GRUPO 17</span>
+          <span class="group-roman">VIIA • Halógenos</span>
+        </div>
+        <div id="halogen-selector-list" class="halogen-selector-list">
+          <!-- Renderizado dinámicamente por app.js -->
+        </div>
+      </aside>
+
+      <!-- Tablero Interactivo con las 4 Esquinas -->
+      <div class="interactive-stage-wrapper">
+        <div class="stage-instructions-bar">
+          <span class="pulse-dot"></span>
+          <span id="stage-status-text">Pasa el mouse (o haz clic) sobre cualquiera de las <strong>4 esquinas</strong> para inspeccionar el elemento con imágenes.</span>
+          <button id="btn-reset-view" class="btn-outline-sm" type="button">Ver las 4 esquinas a la vez</button>
+        </div>
+
+        <div id="four-corners-stage" class="four-corners-stage">
+          <!-- ESQUINA SUPERIOR IZQUIERDA: Dónde los encontramos -->
+          <article class="corner-zone corner-tl" data-corner="topLeft" tabindex="0">
+            <div class="corner-indicator">
+              <span class="corner-arrow">↖</span>
+              <span class="corner-tag">ESQUINA SUPERIOR IZQUIERDA</span>
+            </div>
+            <h3 class="corner-main-heading">¿Dónde lo encontramos?</h3>
+            <p class="corner-short-desc">Pasa el cursor aquí para ver minerales, yacimientos y alimentos donde se halla.</p>
+            <div class="corner-preview-thumb">
+              <img id="thumb-tl" src="" alt="Vista previa dónde lo encontramos" />
+              <div class="thumb-svg-badge" id="svg-tl"></div>
+            </div>
+          </article>
+
+          <!-- ESQUINA SUPERIOR DERECHA: Características del elemento -->
+          <article class="corner-zone corner-tr" data-corner="topRight" tabindex="0">
+            <div class="corner-indicator">
+              <span class="corner-tag">ESQUINA SUPERIOR DERECHA</span>
+              <span class="corner-arrow">↗</span>
+            </div>
+            <h3 class="corner-main-heading">Características del Elemento</h3>
+            <p class="corner-short-desc">Pasa el cursor aquí para ver propiedades atómicas, óxidos y ácidos.</p>
+            <div class="corner-preview-thumb">
+              <img id="thumb-tr" src="" alt="Vista previa características del elemento" />
+              <div class="thumb-svg-badge" id="svg-tr"></div>
+            </div>
+          </article>
+
+          <!-- TARJETA CENTRAL DEL ELEMENTO (NÚCLEO DE LA INTERFAZ) -->
+          <div class="center-element-hub" id="center-element-hub">
+            <div class="element-tile-large" id="active-element-tile">
+              <div class="tile-top-row">
+                <span class="tile-atomic-number" id="hub-number">9</span>
+                <span class="tile-state-badge" id="hub-state">Gas a 20 °C</span>
+              </div>
+              <div class="tile-symbol" id="hub-symbol">F</div>
+              <div class="tile-name" id="hub-name">Flúor</div>
+              <div class="tile-mass" id="hub-mass">18.998 u</div>
+              <div class="tile-config" id="hub-config">[He] 2s² 2p⁵</div>
+            </div>
+            <p class="hub-tagline" id="hub-tagline"></p>
+            <div class="hub-compass-hint">
+              <span>↖ Encontramos</span>
+              <span>Características ↗</span>
+              <span>↙ Utilizamos</span>
+              <span>Cómo se ve ↘</span>
+            </div>
+          </div>
+
+          <!-- ESQUINA INFERIOR IZQUIERDA: Dónde los utilizamos -->
+          <article class="corner-zone corner-bl" data-corner="bottomLeft" tabindex="0">
+            <div class="corner-indicator">
+              <span class="corner-arrow">↙</span>
+              <span class="corner-tag">ESQUINA INFERIOR IZQUIERDA</span>
+            </div>
+            <h3 class="corner-main-heading">¿Dónde lo utilizamos?</h3>
+            <p class="corner-short-desc">Pasa el cursor aquí para ver sus aplicaciones en materiales, industria y salud.</p>
+            <div class="corner-preview-thumb">
+              <img id="thumb-bl" src="" alt="Vista previa dónde lo utilizamos" />
+              <div class="thumb-svg-badge" id="svg-bl"></div>
+            </div>
+          </article>
+
+          <!-- ESQUINA INFERIOR DERECHA: Cómo se ve -->
+          <article class="corner-zone corner-br" data-corner="bottomRight" tabindex="0">
+            <div class="corner-indicator">
+              <span class="corner-tag">ESQUINA INFERIOR DERECHA</span>
+              <span class="corner-arrow">↘</span>
+            </div>
+            <h3 class="corner-main-heading">¿Cómo se ve?</h3>
+            <p class="corner-short-desc">Pasa el cursor aquí para observar su apariencia física real, color y estado.</p>
+            <div class="corner-preview-thumb">
+              <img id="thumb-br" src="" alt="Vista previa cómo se ve el elemento" />
+              <div class="thumb-svg-badge" id="svg-br"></div>
+            </div>
+          </article>
+
+          <!-- PANEL EXPANDIDO DE DETALLE CUANDO SE PASA POR UNA ESQUINA -->
+          <div id="corner-detail-overlay" class="corner-detail-overlay" aria-live="polite">
+            <div class="detail-card">
+              <div class="detail-visual-col">
+                <div class="detail-photo-frame">
+                  <img id="detail-photo" src="" alt="Imagen detallada de la esquina seleccionada" />
+                  <div id="detail-svg-illustration" class="detail-svg-illustration"></div>
+                  <span id="detail-corner-badge" class="detail-corner-badge">Esquina</span>
+                </div>
+                <p id="detail-image-caption" class="detail-image-caption"></p>
+              </div>
+
+              <div class="detail-content-col">
+                <div class="detail-header-row">
+                  <div>
+                    <span id="detail-kicker" class="detail-kicker">ESQUINA ACTIVA</span>
+                    <h3 id="detail-title" class="detail-title">Título de la Esquina</h3>
+                    <p id="detail-subtitle" class="detail-subtitle"></p>
+                  </div>
+                  <button id="btn-close-detail" class="btn-close-detail" type="button" title="Volver al mapa de 4 esquinas">✕ Cerrar vista</button>
+                </div>
+
+                <ul id="detail-points-list" class="detail-points-list"></ul>
+
+                <div id="detail-extra-chemistry" class="detail-extra-chemistry"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: CLASIFICACIÓN PERIÓDICA, ÓXIDOS ÁCIDOS / BÁSICOS Y ÁCIDOS BINARIOS / TERNARIOS -->
+    <section id="compuestos-quimicos" class="academic-section">
+      <div class="section-header">
+        <span class="pill-tag">Requisito del Trabajo Especial</span>
+        <h2>Clasificación Periódica, Óxidos y Ácidos Binarios / Ternarios</h2>
+        <p>
+          Resumen estructurado de la <strong>Familia de los Halógenos (Grupo 17 / VIIA)</strong>: incluye su clasificación periódica, formación de <strong>óxidos ácidos (anhídridos)</strong> frente a <strong>óxidos básicos</strong>, <strong>ácidos binarios (hidrácidos)</strong> y <strong>ácidos ternarios (oxoácidos)</strong> comunes.
+        </p>
+      </div>
+
+      <div class="chemistry-cards-grid" id="chemistry-cards-grid">
+        <!-- Generado dinámicamente con data.js -->
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3: MATRIZ DE ALIMENTOS, SUSTANCIAS Y MATERIALES -->
+    <section id="alimentos-materiales" class="academic-section">
+      <div class="section-header">
+        <span class="pill-tag">Química en la Vida Cotidiana</span>
+        <h2>Alimentos, Sustancias y Materiales donde se Encuentra cada Halógeno</h2>
+        <p>
+          Comparativa directa de las fuentes naturales, alimentos de consumo humano, sustancias químicas y materiales industriales de los 6 elementos del Grupo 17.
+        </p>
+      </div>
+
+      <div class="table-responsive">
+        <table class="halogen-comparison-table">
+          <thead>
+            <tr>
+              <th>Elemento (Grupo 17)</th>
+              <th>↖ Dónde se encuentra (Naturaleza y Alimentos)</th>
+              <th>↗ Ácidos Binarios, Ternarios y Óxidos</th>
+              <th>↙ Materiales y Sustancias de Uso</th>
+              <th>↘ Cómo se ve (Estado a 20 °C)</th>
+            </tr>
+          </thead>
+          <tbody id="comparison-table-body">
+            <!-- Renderizado por app.js -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 4: EVIDENCIA DE COMANDOS CON INTELIGENCIA ARTIFICIAL -->
+    <section id="evidencia-ia" class="academic-section evidence-section">
+      <div class="section-header">
+        <span class="pill-tag">Documentación del Proyecto</span>
+        <h2>Evidencia de Comandos de Inteligencia Artificial por Secciones</h2>
+        <p>
+          Tal como solicita la rúbrica del <strong>Trabajo Especial</strong> (<em>"ser creativo en cada comando que proporcione y dejar evidencia del resultado por secciones"</em>), aquí se documentan los comandos empleados y la evidencia generada.
+        </p>
+      </div>
+
+      <div id="evidence-list" class="evidence-list">
+        <!-- Renderizado por app.js -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>Tabla Periódica Interactiva — Familia de los Halógenos (Grupo 17 / VIIA)</strong>
+        <p>Trabajo Especial de Química • Interfaz Interactiva por las 4 Esquinas con Imágenes y Diagramas</p>
+      </div>
+      <button onclick="window.print()" class="btn-print" type="button">🖨️ Imprimir / Guardar Evidencia en PDF</button>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
