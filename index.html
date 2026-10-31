@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Los Halógenos (Grupo 17) — Tabla Periódica Interactiva por Esquinas</title>
+  <title>Los Halógenos (Grupo 17) — Tabla Periódica Interactiva</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -19,47 +19,47 @@
       <div class="brand">
         <div class="brand-badge">VIIA</div>
         <div>
-          <span class="brand-kicker">TRABAJO ESPECIAL • QUÍMICA CON IA</span>
+          <span class="brand-kicker">TABLA PERIÓDICA INTERACTIVA</span>
           <h1 class="brand-title">Familia de los Halógenos <span>(Grupo 17)</span></h1>
         </div>
       </div>
 
       <nav class="nav-links" aria-label="Secciones del sitio">
-        <a href="#explorador-esquinas" class="nav-link active">Explorador 4 Esquinas</a>
+        <a href="#explorador-esquinas" class="nav-link active">Elementos Interactivos</a>
+        <a href="#simulador-ionizacion" class="nav-link">⚡ Simulador de Ionización</a>
         <a href="#compuestos-quimicos" class="nav-link">Óxidos y Ácidos</a>
         <a href="#alimentos-materiales" class="nav-link">Alimentos y Materiales</a>
-        <a href="#evidencia-ia" class="nav-link">Evidencia de Comandos IA</a>
       </nav>
     </div>
   </header>
 
   <main class="container">
-    <!-- Banner de instrucciones rápidas -->
+    <!-- Banner de presentación limpio -->
     <section class="intro-banner">
       <div class="intro-text">
-        <span class="pill-tag">Interacción por Cuadrantes</span>
-        <h2>Explora cada Halógeno pasando el cursor por sus <span class="gradient-text">4 Esquinas</span></h2>
+        <span class="pill-tag">Grupo 17 • Familia VIIA</span>
+        <h2>Explora cada Halógeno de forma <span class="gradient-text">Interactiva</span></h2>
         <p>
-          Selecciona cualquiera de los <strong>6 elementos del Grupo 17</strong> en la columna periódica y coloca el puntero sobre cada una de las <strong>4 esquinas del laboratorio interactivo</strong> para descubrir dónde lo encontramos, sus características químicas, dónde lo utilizamos y cómo se ve en la realidad con imágenes e ilustraciones científicas.
+          Selecciona cualquiera de los <strong>6 elementos del Grupo 17</strong> en la columna periódica y coloca el cursor sobre cualquiera de las 4 secciones que rodean al elemento para observar dónde lo encontramos, sus características químicas, dónde lo utilizamos y cómo se ve en la realidad.
         </p>
         <div class="corner-legend-grid">
           <div class="legend-chip" data-corner-btn="topLeft">
-            <span class="chip-pos">↖ Esquina Superior Izquierda</span>
+            <span class="chip-pos">↖ Origen y Fuentes</span>
             <strong>Dónde los encontramos</strong>
             <small>Minerales, alimentos y naturaleza</small>
           </div>
           <div class="legend-chip" data-corner-btn="topRight">
-            <span class="chip-pos">↗ Esquina Superior Derecha</span>
+            <span class="chip-pos">↗ Propiedades Químicas</span>
             <strong>Características del elemento</strong>
-            <small>Propiedades, óxidos y ácidos</small>
+            <small>Clasificación, óxidos y ácidos</small>
           </div>
           <div class="legend-chip" data-corner-btn="bottomLeft">
-            <span class="chip-pos">↙ Esquina Inferior Izquierda</span>
+            <span class="chip-pos">↙ Aplicaciones</span>
             <strong>Dónde los utilizamos</strong>
             <small>Industria, medicina y materiales</small>
           </div>
           <div class="legend-chip" data-corner-btn="bottomRight">
-            <span class="chip-pos">↘ Esquina Inferior Derecha</span>
+            <span class="chip-pos">↘ Apariencia Física</span>
             <strong>Cómo se ve</strong>
             <small>Estado físico real e imágenes</small>
           </div>
@@ -69,13 +69,13 @@
       <div class="intro-showcase-card">
         <img src="assets/img/halogens_showcase.jpg" alt="Fotografía de laboratorio de los 6 elementos halógenos: Flúor, Cloro, Bromo, Yodo, Astato y Teneso" class="showcase-img" />
         <div class="showcase-caption">
-          <span>Vista Comparativa del Grupo 17 (F, Cl, Br, I, At, Ts)</span>
-          <small>De gases reactivos (F₂, Cl₂) al único no metal líquido (Br₂) y sólidos cristalinos/radiactivos (I₂, At, Ts).</small>
+          <span>Los 6 Elementos del Grupo 17 (F, Cl, Br, I, At, Ts)</span>
+          <small>De gases altamente reactivos (F₂, Cl₂) al único no metal líquido (Br₂) y sólidos cristalinos o sintéticos (I₂, At, Ts).</small>
         </div>
       </div>
     </section>
 
-    <!-- SECCIÓN PRINCIPAL: COLUMNA PERIÓDICA + LABORATORIO DE 4 ESQUINAS -->
+    <!-- SECCIÓN PRINCIPAL: COLUMNA PERIÓDICA + EXPLORADOR INTERACTIVO -->
     <section id="explorador-esquinas" class="explorer-section">
       <!-- Selector vertical de la columna Grupo 17 -->
       <aside class="periodic-column-panel" aria-label="Columna Grupo 17 de la Tabla Periódica">
@@ -88,44 +88,44 @@
         </div>
       </aside>
 
-      <!-- Tablero Interactivo con las 4 Esquinas -->
+      <!-- Tablero Interactivo -->
       <div class="interactive-stage-wrapper">
         <div class="stage-instructions-bar">
           <span class="pulse-dot"></span>
-          <span id="stage-status-text">Pasa el mouse (o haz clic) sobre cualquiera de las <strong>4 esquinas</strong> para inspeccionar el elemento con imágenes.</span>
-          <button id="btn-reset-view" class="btn-outline-sm" type="button">Ver las 4 esquinas a la vez</button>
+          <span id="stage-status-text">Pasa el cursor o haz clic sobre cualquier sección alrededor del elemento para ver su información e imágenes.</span>
+          <button id="btn-reset-view" class="btn-outline-sm" type="button">Vista general</button>
         </div>
 
         <div id="four-corners-stage" class="four-corners-stage">
-          <!-- ESQUINA SUPERIOR IZQUIERDA: Dónde los encontramos -->
+          <!-- SUPERIOR IZQUIERDA: Dónde los encontramos -->
           <article class="corner-zone corner-tl" data-corner="topLeft" tabindex="0">
             <div class="corner-indicator">
               <span class="corner-arrow">↖</span>
-              <span class="corner-tag">ESQUINA SUPERIOR IZQUIERDA</span>
+              <span class="corner-tag">ORIGEN Y ALIMENTOS</span>
             </div>
             <h3 class="corner-main-heading">¿Dónde lo encontramos?</h3>
-            <p class="corner-short-desc">Pasa el cursor aquí para ver minerales, yacimientos y alimentos donde se halla.</p>
+            <p class="corner-short-desc">Minerales en la naturaleza, yacimientos y alimentos donde está presente.</p>
             <div class="corner-preview-thumb">
               <img id="thumb-tl" src="" alt="Vista previa dónde lo encontramos" />
               <div class="thumb-svg-badge" id="svg-tl"></div>
             </div>
           </article>
 
-          <!-- ESQUINA SUPERIOR DERECHA: Características del elemento -->
+          <!-- SUPERIOR DERECHA: Características del elemento -->
           <article class="corner-zone corner-tr" data-corner="topRight" tabindex="0">
             <div class="corner-indicator">
-              <span class="corner-tag">ESQUINA SUPERIOR DERECHA</span>
+              <span class="corner-tag">PROPIEDADES QUÍMICAS</span>
               <span class="corner-arrow">↗</span>
             </div>
             <h3 class="corner-main-heading">Características del Elemento</h3>
-            <p class="corner-short-desc">Pasa el cursor aquí para ver propiedades atómicas, óxidos y ácidos.</p>
+            <p class="corner-short-desc">Estructura atómica, clasificación periódica, óxidos y ácidos.</p>
             <div class="corner-preview-thumb">
               <img id="thumb-tr" src="" alt="Vista previa características del elemento" />
               <div class="thumb-svg-badge" id="svg-tr"></div>
             </div>
           </article>
 
-          <!-- TARJETA CENTRAL DEL ELEMENTO (NÚCLEO DE LA INTERFAZ) -->
+          <!-- TARJETA CENTRAL DEL ELEMENTO -->
           <div class="center-element-hub" id="center-element-hub">
             <div class="element-tile-large" id="active-element-tile">
               <div class="tile-top-row">
@@ -146,42 +146,42 @@
             </div>
           </div>
 
-          <!-- ESQUINA INFERIOR IZQUIERDA: Dónde los utilizamos -->
+          <!-- INFERIOR IZQUIERDA: Dónde los utilizamos -->
           <article class="corner-zone corner-bl" data-corner="bottomLeft" tabindex="0">
             <div class="corner-indicator">
               <span class="corner-arrow">↙</span>
-              <span class="corner-tag">ESQUINA INFERIOR IZQUIERDA</span>
+              <span class="corner-tag">USOS Y MATERIALES</span>
             </div>
             <h3 class="corner-main-heading">¿Dónde lo utilizamos?</h3>
-            <p class="corner-short-desc">Pasa el cursor aquí para ver sus aplicaciones en materiales, industria y salud.</p>
+            <p class="corner-short-desc">Aplicaciones en materiales cotidianos, medicina, tecnología e industria.</p>
             <div class="corner-preview-thumb">
               <img id="thumb-bl" src="" alt="Vista previa dónde lo utilizamos" />
               <div class="thumb-svg-badge" id="svg-bl"></div>
             </div>
           </article>
 
-          <!-- ESQUINA INFERIOR DERECHA: Cómo se ve -->
+          <!-- INFERIOR DERECHA: Cómo se ve -->
           <article class="corner-zone corner-br" data-corner="bottomRight" tabindex="0">
             <div class="corner-indicator">
-              <span class="corner-tag">ESQUINA INFERIOR DERECHA</span>
+              <span class="corner-tag">ASPECTO VISUAL</span>
               <span class="corner-arrow">↘</span>
             </div>
             <h3 class="corner-main-heading">¿Cómo se ve?</h3>
-            <p class="corner-short-desc">Pasa el cursor aquí para observar su apariencia física real, color y estado.</p>
+            <p class="corner-short-desc">Apariencia física real, color, estado de agregación y muestras.</p>
             <div class="corner-preview-thumb">
               <img id="thumb-br" src="" alt="Vista previa cómo se ve el elemento" />
               <div class="thumb-svg-badge" id="svg-br"></div>
             </div>
           </article>
 
-          <!-- PANEL EXPANDIDO DE DETALLE CUANDO SE PASA POR UNA ESQUINA -->
+          <!-- PANEL EXPANDIDO DE DETALLE -->
           <div id="corner-detail-overlay" class="corner-detail-overlay" aria-live="polite">
             <div class="detail-card">
               <div class="detail-visual-col">
                 <div class="detail-photo-frame">
-                  <img id="detail-photo" src="" alt="Imagen detallada de la esquina seleccionada" />
+                  <img id="detail-photo" src="" alt="Imagen detallada de la sección seleccionada" />
                   <div id="detail-svg-illustration" class="detail-svg-illustration"></div>
-                  <span id="detail-corner-badge" class="detail-corner-badge">Esquina</span>
+                  <span id="detail-corner-badge" class="detail-corner-badge">Sección</span>
                 </div>
                 <p id="detail-image-caption" class="detail-image-caption"></p>
               </div>
@@ -189,11 +189,19 @@
               <div class="detail-content-col">
                 <div class="detail-header-row">
                   <div>
-                    <span id="detail-kicker" class="detail-kicker">ESQUINA ACTIVA</span>
-                    <h3 id="detail-title" class="detail-title">Título de la Esquina</h3>
+                    <span id="detail-kicker" class="detail-kicker">INFORMACIÓN DEL ELEMENTO</span>
+                    <h3 id="detail-title" class="detail-title">Título</h3>
                     <p id="detail-subtitle" class="detail-subtitle"></p>
                   </div>
-                  <button id="btn-close-detail" class="btn-close-detail" type="button" title="Volver al mapa de 4 esquinas">✕ Cerrar vista</button>
+                  <button id="btn-close-detail" class="btn-close-detail" type="button" title="Cerrar y volver a las 4 secciones">✕ Cerrar</button>
+                </div>
+
+                <!-- Botones rápidos para cambiar entre las 4 secciones sin tener que cerrar -->
+                <div class="quick-corner-switcher">
+                  <button type="button" class="quick-switch-btn" data-switch-corner="topLeft">↖ Dónde lo encontramos</button>
+                  <button type="button" class="quick-switch-btn" data-switch-corner="topRight">↗ Características</button>
+                  <button type="button" class="quick-switch-btn" data-switch-corner="bottomLeft">↙ Dónde lo utilizamos</button>
+                  <button type="button" class="quick-switch-btn" data-switch-corner="bottomRight">↘ Cómo se ve</button>
                 </div>
 
                 <ul id="detail-points-list" class="detail-points-list"></ul>
@@ -206,13 +214,132 @@
       </div>
     </section>
 
+    <!-- SECCIÓN NUEVA: SIMULADOR DIDÁCTICO DE IONIZACIÓN Y ESPECTRO DE EMISIÓN -->
+    <section id="simulador-ionizacion" class="academic-section ionization-section">
+      <div class="section-header">
+        <span class="pill-tag">Laboratorio Didáctico Interactivo</span>
+        <h2>⚡ ¿Cómo producen colores los Halógenos al ser Ionizados?</h2>
+        <p>
+          Una cosa es el <strong>color natural de absorción</strong> de un halógeno en reposo (gas, líquido o cristal) y otra muy distinta es el <strong>color de emisión por plasma</strong> cuando le aplicamos alto voltaje. Sube el voltaje para excitar e ionizar los átomos: verás cómo los electrones saltan de nivel energético y al regresar emiten <strong>fotones de luz ($E = h\cdot\nu$)</strong> con su espectro característico.
+        </p>
+      </div>
+
+      <div class="ionization-lab-card">
+        <!-- Selector rápido de halógeno para el tubo de descarga -->
+        <div class="ion-element-tabs" id="ion-element-tabs" role="tablist">
+          <!-- Generado por app.js -->
+        </div>
+
+        <div class="ion-lab-grid">
+          <!-- Columna izquierda: Tubo de descarga de gas + Átomo cuántico animado -->
+          <div class="ion-visuals-panel">
+            <!-- Tubo de descarga de plasma -->
+            <div class="discharge-tube-box">
+              <div class="tube-header-labels">
+                <span id="ion-mode-badge" class="ion-mode-badge">Estado Neutro (Sin voltaje)</span>
+                <span id="ion-energy-badge" class="ion-energy-badge">Energía de 1ª Ionización: --</span>
+              </div>
+
+              <div class="discharge-tube-assembly">
+                <div class="electrode electrode-left">
+                  <span>CÁTODO (−)</span>
+                </div>
+                <div class="glass-tube" id="glass-tube">
+                  <div class="natural-gas-fill" id="natural-gas-fill"></div>
+                  <div class="plasma-beam" id="plasma-beam"></div>
+                  <div class="ion-particles-layer" id="ion-particles-layer"></div>
+                </div>
+                <div class="electrode electrode-right">
+                  <span>ÁNODO (+)</span>
+                </div>
+              </div>
+
+              <!-- Controles de voltaje -->
+              <div class="voltage-controls">
+                <div class="voltage-slider-group">
+                  <label for="voltage-slider">
+                    <strong>Voltaje de Descarga Aplicado:</strong>
+                    <span id="voltage-value-label" class="voltage-readout">0 kV (Apagado)</span>
+                  </label>
+                  <input type="range" id="voltage-slider" min="0" max="100" value="0" step="1" />
+                </div>
+                <div class="voltage-preset-btns">
+                  <button type="button" class="btn-ion-preset" id="btn-ion-off">Estado Natural (0 kV)</button>
+                  <button type="button" class="btn-ion-preset btn-ion-excite" id="btn-ion-max">⚡ Ionizar al Máximo (15 kV)</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Diagrama didáctico del salto electrónico y emisión de fotón -->
+            <div class="quantum-jump-card">
+              <div class="quantum-svg-wrap" id="quantum-svg-wrap">
+                <!-- SVG animado de niveles energéticos -->
+              </div>
+              <div class="quantum-caption">
+                <strong>¿Por qué cambia el color al ionizarse?</strong>
+                <p id="ion-explanation-text"></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Columna derecha: Comparativa Color Natural vs Plasma Ionizado + Espectro de líneas -->
+          <div class="ion-info-panel">
+            <div class="color-comparison-boxes">
+              <div class="color-sample-card">
+                <span class="sample-kicker">1. EN REPOSO (LUZ ABSORBIDA)</span>
+                <div class="color-swatch" id="swatch-natural"></div>
+                <strong id="natural-color-title">Color Natural</strong>
+                <small>Color que vemos a temperatura ambiente sin descarga eléctrica.</small>
+              </div>
+
+              <div class="color-sample-card">
+                <span class="sample-kicker">2. IONIZADO (LUZ EMITIDA EN PLASMA)</span>
+                <div class="color-swatch swatch-plasma" id="swatch-plasma"></div>
+                <strong id="plasma-color-title">Color Ionizado</strong>
+                <small>Resplandor emitido cuando los electrones excitados liberan fotones.</small>
+              </div>
+            </div>
+
+            <!-- Espectroscopio de líneas de emisión realista (Placa fotográfica + Perfil de intensidad) -->
+            <div class="spectroscope-box">
+              <div class="spectro-header">
+                <div>
+                  <strong>🌈 Espectroscopio de Emisión Atómica (Datos NIST)</strong>
+                  <small class="spectro-sub">Placa espectral de difracción e intensidad relativa de fotones (380 nm – 760 nm)</small>
+                </div>
+                <span id="spectro-state-hint" class="spectro-badge-hint">Pasa el cursor por las líneas</span>
+              </div>
+
+              <!-- Lienzo de alta precisión para el espectro continuo + líneas de emisión + curva de intensidad -->
+              <div class="spectro-canvas-wrapper">
+                <canvas id="spectrum-canvas" width="760" height="165"></canvas>
+                <div id="spectrum-hover-tooltip" class="spectrum-hover-tooltip"></div>
+              </div>
+
+              <!-- Regla graduada en nanómetros (nm) -->
+              <div class="spectrum-ruler">
+                <span>380 nm<br/><small>UV/Violeta</small></span>
+                <span>450 nm<br/><small>Azul</small></span>
+                <span>500 nm<br/><small>Cian/Verde</small></span>
+                <span>580 nm<br/><small>Amarillo</small></span>
+                <span>650 nm<br/><small>Rojo</small></span>
+                <span>760 nm<br/><small>Infrarrojo</small></span>
+              </div>
+
+              <div id="spectral-wavelength-tags" class="spectral-wavelength-tags"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- SECCIÓN 2: CLASIFICACIÓN PERIÓDICA, ÓXIDOS ÁCIDOS / BÁSICOS Y ÁCIDOS BINARIOS / TERNARIOS -->
     <section id="compuestos-quimicos" class="academic-section">
       <div class="section-header">
-        <span class="pill-tag">Requisito del Trabajo Especial</span>
+        <span class="pill-tag">Química Inorgánica del Grupo 17</span>
         <h2>Clasificación Periódica, Óxidos y Ácidos Binarios / Ternarios</h2>
         <p>
-          Resumen estructurado de la <strong>Familia de los Halógenos (Grupo 17 / VIIA)</strong>: incluye su clasificación periódica, formación de <strong>óxidos ácidos (anhídridos)</strong> frente a <strong>óxidos básicos</strong>, <strong>ácidos binarios (hidrácidos)</strong> y <strong>ácidos ternarios (oxoácidos)</strong> comunes.
+          Propiedades químicas de la <strong>Familia de los Halógenos (Grupo 17 / VIIA)</strong>: clasificación periódica, formación de <strong>óxidos ácidos (anhídridos)</strong> frente a <strong>óxidos básicos</strong>, <strong>ácidos binarios (hidrácidos)</strong> y <strong>ácidos ternarios (oxoácidos)</strong> comunes.
         </p>
       </div>
 
@@ -224,10 +351,10 @@
     <!-- SECCIÓN 3: MATRIZ DE ALIMENTOS, SUSTANCIAS Y MATERIALES -->
     <section id="alimentos-materiales" class="academic-section">
       <div class="section-header">
-        <span class="pill-tag">Química en la Vida Cotidiana</span>
+        <span class="pill-tag">Presencia y Aplicaciones</span>
         <h2>Alimentos, Sustancias y Materiales donde se Encuentra cada Halógeno</h2>
         <p>
-          Comparativa directa de las fuentes naturales, alimentos de consumo humano, sustancias químicas y materiales industriales de los 6 elementos del Grupo 17.
+          Resumen comparativo de las fuentes naturales, alimentos de consumo humano, compuestos ácidos y materiales industriales de los 6 elementos del Grupo 17.
         </p>
       </div>
 
@@ -236,9 +363,9 @@
           <thead>
             <tr>
               <th>Elemento (Grupo 17)</th>
-              <th>↖ Dónde se encuentra (Naturaleza y Alimentos)</th>
+              <th>↖ Dónde lo encontramos (Naturaleza y Alimentos)</th>
               <th>↗ Ácidos Binarios, Ternarios y Óxidos</th>
-              <th>↙ Materiales y Sustancias de Uso</th>
+              <th>↙ Dónde lo utilizamos (Materiales y Sustancias)</th>
               <th>↘ Cómo se ve (Estado a 20 °C)</th>
             </tr>
           </thead>
@@ -248,30 +375,15 @@
         </table>
       </div>
     </section>
-
-    <!-- SECCIÓN 4: EVIDENCIA DE COMANDOS CON INTELIGENCIA ARTIFICIAL -->
-    <section id="evidencia-ia" class="academic-section evidence-section">
-      <div class="section-header">
-        <span class="pill-tag">Documentación del Proyecto</span>
-        <h2>Evidencia de Comandos de Inteligencia Artificial por Secciones</h2>
-        <p>
-          Tal como solicita la rúbrica del <strong>Trabajo Especial</strong> (<em>"ser creativo en cada comando que proporcione y dejar evidencia del resultado por secciones"</em>), aquí se documentan los comandos empleados y la evidencia generada.
-        </p>
-      </div>
-
-      <div id="evidence-list" class="evidence-list">
-        <!-- Renderizado por app.js -->
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>
         <strong>Tabla Periódica Interactiva — Familia de los Halógenos (Grupo 17 / VIIA)</strong>
-        <p>Trabajo Especial de Química • Interfaz Interactiva por las 4 Esquinas con Imágenes y Diagramas</p>
+        <p>Flúor (F) • Cloro (Cl) • Bromo (Br) • Yodo (I) • Astato (At) • Teneso (Ts)</p>
       </div>
-      <button onclick="window.print()" class="btn-print" type="button">🖨️ Imprimir / Guardar Evidencia en PDF</button>
+      <button onclick="window.print()" class="btn-print" type="button">🖨️ Imprimir / Guardar en PDF</button>
     </div>
   </footer>
 

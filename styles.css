@@ -777,21 +777,49 @@ body {
 }
 
 .btn-close-detail {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.12);
   color: var(--text-main);
-  border: 1px solid var(--border-subtle);
-  padding: 0.45rem 0.9rem;
+  border: 1.5px solid var(--accent);
+  padding: 0.5rem 1.05rem;
   border-radius: 10px;
-  font-size: 0.82rem;
-  font-weight: 600;
+  font-size: 0.85rem;
+  font-weight: 700;
   cursor: pointer;
   flex-shrink: 0;
   transition: all 0.2s ease;
+  position: relative;
+  z-index: 30;
 }
 
 .btn-close-detail:hover {
   background: var(--accent);
   color: #070b14;
+  border-color: var(--accent);
+  transform: scale(1.04);
+}
+
+.quick-corner-switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.quick-switch-btn {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-muted);
+  border: 1px solid var(--border-subtle);
+  padding: 0.35rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.quick-switch-btn:hover,
+.quick-switch-btn.active {
+  background: var(--accent-soft);
+  color: var(--accent);
   border-color: var(--accent);
 }
 
@@ -828,6 +856,464 @@ body {
 
 .detail-extra-chemistry strong {
   color: var(--text-main);
+}
+
+/* SIMULADOR DIDÁCTICO DE IONIZACIÓN Y ESPECTRO */
+.ionization-lab-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.6rem;
+  box-shadow: var(--shadow-deep);
+}
+
+.ion-element-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.ion-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.55rem 1rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-main);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.22s ease;
+}
+
+.ion-tab-btn:hover {
+  background: rgba(255, 255, 255, 0.09);
+  transform: translateY(-1px);
+}
+
+.ion-tab-btn.active {
+  border-color: var(--tab-color, var(--accent));
+  background: rgba(255, 255, 255, 0.11);
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.45);
+}
+
+.ion-tab-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--tab-color, var(--accent));
+  box-shadow: 0 0 8px var(--tab-color, var(--accent));
+}
+
+.ion-lab-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 1.6rem;
+  align-items: stretch;
+}
+
+.ion-visuals-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.discharge-tube-box {
+  background: rgba(7, 11, 20, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 16px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.tube-header-labels {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.ion-mode-badge {
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-main);
+  border: 1px solid var(--border-subtle);
+}
+
+.ion-energy-badge {
+  font-size: 0.78rem;
+  color: var(--accent);
+  font-family: 'Space Grotesk', monospace;
+}
+
+.discharge-tube-assembly {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 0.75rem 0;
+}
+
+.electrode {
+  width: 68px;
+  height: 66px;
+  background: linear-gradient(180deg, #3a465e, #1a2232);
+  border: 2px solid #596987;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #d6e2ff;
+  flex-shrink: 0;
+  box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.2);
+}
+
+.electrode-left {
+  border-radius: 12px 0 0 12px;
+}
+
+.electrode-right {
+  border-radius: 0 12px 12px 0;
+}
+
+.glass-tube {
+  position: relative;
+  flex: 1;
+  height: 82px;
+  background: rgba(5, 9, 18, 0.92);
+  border-top: 3px solid rgba(255, 255, 255, 0.28);
+  border-bottom: 3px solid rgba(255, 255, 255, 0.28);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 10px 18px rgba(255, 255, 255, 0.06), inset 0 -10px 18px rgba(0, 0, 0, 0.8);
+}
+
+.natural-gas-fill {
+  position: absolute;
+  inset: 0;
+  opacity: 0.35;
+  transition: background 0.35s ease, opacity 0.35s ease;
+}
+
+.plasma-beam {
+  position: relative;
+  width: 100%;
+  height: 26px;
+  border-radius: 999px;
+  opacity: 0;
+  filter: blur(2px);
+  transition: opacity 0.15s ease, height 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ion-particles-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.ion-particle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  background: rgba(10, 15, 28, 0.75);
+  color: #fff;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+@keyframes plasmaJitter {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(-3px, -4px) scale(1.08); }
+  50% { transform: translate(3px, 3px) scale(0.96); }
+  75% { transform: translate(-2px, 4px) scale(1.05); }
+}
+
+.voltage-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.voltage-slider-group label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  margin-bottom: 0.35rem;
+}
+
+.voltage-readout {
+  color: var(--accent);
+  font-weight: 700;
+  font-family: 'Space Grotesk', monospace;
+}
+
+#voltage-slider {
+  width: 100%;
+  accent-color: var(--accent);
+  cursor: pointer;
+  height: 8px;
+}
+
+.voltage-preset-btns {
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.btn-ion-preset {
+  flex: 1;
+  padding: 0.55rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid var(--border-subtle);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-main);
+  font-weight: 600;
+  font-size: 0.84rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-ion-preset:hover {
+  border-color: var(--accent);
+}
+
+.btn-ion-excite {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.btn-ion-excite:hover {
+  background: var(--accent);
+  color: #070b14;
+}
+
+.quantum-jump-card {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 1rem;
+  align-items: center;
+  background: rgba(10, 16, 30, 0.85);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  padding: 1rem;
+}
+
+.quantum-svg-wrap {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto;
+}
+
+.quantum-caption strong {
+  display: block;
+  color: var(--accent);
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+}
+
+.quantum-caption p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.48;
+}
+
+.ion-info-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.1rem;
+}
+
+.color-comparison-boxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+}
+
+.color-sample-card {
+  background: rgba(9, 14, 26, 0.88);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.sample-kicker {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.color-swatch {
+  width: 100%;
+  height: 58px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.35s ease;
+}
+
+.color-sample-card strong {
+  font-size: 0.92rem;
+}
+
+.color-sample-card small {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  line-height: 1.35;
+}
+
+.spectroscope-box {
+  background: rgba(5, 8, 16, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 16px;
+  padding: 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.85);
+}
+
+.spectro-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.spectro-sub {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.1rem;
+}
+
+.spectro-badge-hint {
+  font-size: 0.72rem;
+  font-family: 'Space Grotesk', monospace;
+  color: var(--accent);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-subtle);
+  padding: 0.22rem 0.6rem;
+  border-radius: 999px;
+}
+
+.spectro-canvas-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  background: #020308;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+}
+
+#spectrum-canvas {
+  width: 100%;
+  height: 165px;
+  display: block;
+  cursor: crosshair;
+}
+
+.spectrum-hover-tooltip {
+  position: absolute;
+  top: 8px;
+  padding: 0.3rem 0.65rem;
+  background: rgba(6, 10, 20, 0.94);
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  color: #fff;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.74rem;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: opacity 0.15s ease;
+  white-space: nowrap;
+  z-index: 10;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.75);
+}
+
+.spectrum-ruler {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-family: 'Space Grotesk', monospace;
+  padding: 0 2px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 0.35rem;
+}
+
+.spectrum-ruler span {
+  text-align: center;
+  line-height: 1.2;
+}
+
+.spectrum-ruler small {
+  font-size: 0.63rem;
+  opacity: 0.75;
+}
+
+.spectral-wavelength-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.38rem;
+  margin-top: 0.25rem;
+}
+
+.wl-tag {
+  font-size: 0.71rem;
+  font-family: 'Space Grotesk', monospace;
+  padding: 0.2rem 0.52rem;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.wl-tag:hover {
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+.wl-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
 }
 
 /* SECCIONES ACADÉMICAS */
@@ -1047,6 +1533,15 @@ body {
   .detail-card {
     grid-template-columns: 1fr;
     overflow-y: auto;
+  }
+
+  .ion-lab-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quantum-jump-card,
+  .color-comparison-boxes {
+    grid-template-columns: 1fr;
   }
 }
 
